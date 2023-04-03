@@ -1,11 +1,6 @@
 FROM pypy:latest
-
 WORKDIR /app
-
 COPY . .
-
-RUN pip3 install -r requirements.txt
-
-EXPOSE 5000
-
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
 CMD ["python", "semantic.py"]
